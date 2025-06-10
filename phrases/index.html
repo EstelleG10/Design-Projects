@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Phrases of Moss</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Phrases of Moss</h1>
+  </header>
+
+  <main>
+    <div class="phrase-box" id="phraseBox"></div>
+  </main>
+
+  <script>
+    const phrases = [
+      "Nodding mosses",
+      "Fringed moss",
+      "Fruits like spokes of a wheel",
+      "With a burnt appearance",
+      "With irregular, unequal leaves.",
+      "Curled, curled like a snail, curled like the young frond of a fern.",
+      "Litchen-like border or hem"
+    ];
+
+    let index = 0;
+    const phraseBox = document.querySelector("#phraseBox");
+
+    function showNextPhrase() {
+      phraseBox.textContent = phrases[index];
+      index = (index + 1) % phrases.length;
+    }
+
+    showNextPhrase();
+    setInterval(showNextPhrase, 3000); // change every 3 seconds
+  </script>
+</body>
+
+</html>
